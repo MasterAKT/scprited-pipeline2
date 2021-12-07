@@ -15,5 +15,8 @@ node {
         stage("install git") {
             sh "ssh  -o StrictHostKeyChecking=no -i $SSHKEY $SSHUSERNAME@${params.SSHNODE} yum install git -y"
         }
+        stage("install ansible") {
+            sh "ssh  -o StrictHostKeyChecking=no -i $SSHKEY $SSHUSERNAME@${params.SSHNODE} yum install ansible -y"
+        }
     }
 }      
